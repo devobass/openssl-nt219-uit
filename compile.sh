@@ -7,13 +7,14 @@ DEPENDENCIES="git make gcc g++ clang clang++ perl"
 CC="gcc"
 CXX="g++"
 CORE_USE="$(nproc)"
-PREFIX="/opt/openssl-nt129/$CC"
 
 if [ "$1" = "--clang" ]
 then
 	CC="clang"
 	CXX="clang++"
 fi
+
+PREFIX="/opt/openssl-nt129/$CC"
 
 printf "Building for %s.\n" "$CC"
 printf "Using %s core(s).\n" "$CORE_USE"
