@@ -38,7 +38,7 @@ then
 	mkdir -p $PREFIX
 fi
 
-#git clone 'https://github.com/openssl/openssl'
+git clone 'https://github.com/openssl/openssl'
 cd openssl
 
 make clean
@@ -47,4 +47,4 @@ make -j $CORE_USE
 make install -j $CORE_USE
 
 printf "%s/lib64/" "$PREFIX" >> "/etc/ld.so.conf.d/openssl_nt219.conf" ldconfig
-$PREFIX/bin/openssl version
+$PREFIX/bin/openssl version && printf "Success.\n"
