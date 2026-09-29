@@ -46,5 +46,7 @@ make clean
 make -j $CORE_USE
 make install -j $CORE_USE
 
-printf "%s/lib64/" "$PREFIX" >> "/etc/ld.so.conf.d/openssl_nt219.conf" ldconfig
+printf "%s/lib64/" "$PREFIX" >> "/etc/ld.so.conf.d/openssl_nt219.conf"
+ldconfig
+
 $PREFIX/bin/openssl version && printf "Success.\n"
